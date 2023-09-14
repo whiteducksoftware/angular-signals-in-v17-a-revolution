@@ -1,0 +1,18 @@
+{
+  "roles": ["whiteduck-blog-post-reader", "angular-blog-posts-demo-admin"],
+  "abilities": [
+    {
+      "action": "read",
+      "subject": "startpage"
+    },
+    {
+      "action": "read",
+      "subject": "angular-blog-posts"
+    },
+    {
+      "action": "manage",
+      "subject": "admin-area"
+    }
+  ],
+  "name": "Fred"
+}

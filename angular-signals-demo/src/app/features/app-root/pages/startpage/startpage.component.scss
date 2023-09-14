@@ -1,0 +1,9 @@
+:host(app-startpage) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .startpage-header {
+    margin: 3rem auto;
+  }
+}

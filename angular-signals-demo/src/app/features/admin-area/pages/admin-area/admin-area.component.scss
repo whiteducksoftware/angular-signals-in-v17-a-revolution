@@ -1,0 +1,9 @@
+:host(app-admin-area) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .header {
+    margin: 3rem auto;
+  }
+}

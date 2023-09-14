@@ -1,0 +1,10 @@
+[
+  {
+    "name": "angular-blog-posts",
+    "enabled": true
+  },
+  {
+    "name": "unfinished-feature",
+    "enabled": false
+  }
+]

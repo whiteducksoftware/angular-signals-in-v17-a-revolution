@@ -1,0 +1,13 @@
+:host(app-root) {
+  --default-spacing: 2rem;
+  --spacing-top-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  height: var(--content-height);
+
+  .layout-container {
+    height: calc(var(--app-content-height));
+    display: flex;
+    flex-direction: column;
+  }
+}

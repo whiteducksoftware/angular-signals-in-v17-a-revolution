@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Angular Signals - A revolution?",
+    "author": "Markus Voit",
+    "url": "",
+    "date": "2023-09-08T11:32:55.256Z",
+    "keywords": ["Angular", "v16", "Signals", "RxJS"]
+  },
+  {
+    "title": "How to keep track of your Angular i18n translations with i18n-ally",
+    "author": "Markus Voit",
+    "url": "https://whiteduck.de/how-to-keep-track-of-your-angular-i18n-translations-with-i18n-ally/",
+    "date": "2022-09-08T11:32:55.256Z",
+    "keywords": ["Angular", "i18n", "i18n-ally", "localize", "VSCode"]
+  },
+  {
+    "title": "How to approach Angular internationalization (i18n) in 2022",
+    "author": "Markus Voit",
+    "url": "https://whiteduck.de/how-to-approach-angular-internationalization-i18n-in-2022/",
+    "date": "2022-09-08T11:32:55.256Z",
+    "keywords": ["Angular", "i18n", "localize", "runtime translations"]
+  }
+]

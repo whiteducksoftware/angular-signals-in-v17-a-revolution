@@ -1,0 +1,12 @@
+:host(app-navbar-main) {
+  display: flex;
+  flex-direction: column;
+
+  #logo {
+    margin-right: 1rem;
+  }
+
+  #navbar-main {
+    height: var(--app-navbar-main-height);
+  }
+}

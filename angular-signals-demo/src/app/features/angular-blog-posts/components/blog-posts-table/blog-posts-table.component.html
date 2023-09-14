@@ -1,0 +1,34 @@
+<p-table [value]="vm.blogPosts() ?? []" [loading]="areBlogPostsLoading()">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Title</th>
+      <th>Url</th>
+      <th>Author</th>
+      <th>Date</th>
+      <th>Keywords</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-blogPost>
+    <tr>
+      <td>{{ blogPost.title }}</td>
+      <td>
+        <a href="{{ blogPost.url }}" target="_blank">{{ blogPost.url }}</a>
+      </td>
+      <td>{{ blogPost.author }}</td>
+      <td>{{ blogPost.date | date }}</td>
+      <td>
+        <p-tag
+          class="blog-post-keyword"
+          *ngFor="let keyword of blogPost.keywords"
+          [value]="keyword"
+          severity="success"
+        />
+      </td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="summary">
+    <div class="flex align-items-center justify-content-between">
+      In total there are {{ blogPostCount() }} blog posts.
+    </div>
+  </ng-template>
+</p-table>
