@@ -1,3 +1,3 @@
-# Angular v16 and signals
+# Demo to showcase Angular Signals in v16
 
-This is a simple example of how to use signals in Angular v16.
+This is a demo for the blog post [Angular Signals in v16 - A revolution?](https://whiteduck.de/angular-signals-in-v16-a-revolution/).
