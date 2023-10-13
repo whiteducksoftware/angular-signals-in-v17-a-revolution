@@ -20,4 +20,24 @@ export class FeatureFlagsService {
           ?.enabled ?? false
     );
   }
+
+  areAllFeaturesEnabled(name: string[]): Signal<boolean> {
+    return computed(() =>
+      name.every(
+        (name) =>
+          this.featureFlags()?.find((feature) => feature.name === name)
+            ?.enabled ?? false
+      )
+    );
+  }
+
+  isAtLeastOneOfTheFeaturesEnabled(name: string[]): Signal<boolean> {
+    return computed(() =>
+      name.some(
+        (name) =>
+          this.featureFlags()?.find((feature) => feature.name === name)
+            ?.enabled ?? false
+      )
+    );
+  }
 }
