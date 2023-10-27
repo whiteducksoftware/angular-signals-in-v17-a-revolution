@@ -1,4 +1,4 @@
-import { Injectable, Signal, computed } from '@angular/core';
+import { Injectable, Signal, computed, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { FeatureFlagsApiMockService } from '../api/mocks/feature-flags-api-mock.service';
 import { FeatureFlag } from '../api/models/feature-flag.interface';
@@ -7,11 +7,13 @@ import { FeatureFlag } from '../api/models/feature-flag.interface';
   providedIn: 'root',
 })
 export class FeatureFlagsService {
-  private readonly featureFlags: Signal<FeatureFlag[] | undefined> = toSignal(
-    this.api.getFeatureFlags()
-  );
+  private featureFlags: Signal<FeatureFlag[] | undefined> = signal(undefined);
 
   constructor(private readonly api: FeatureFlagsApiMockService) {}
+
+  initializeFeatureFlags() {
+    this.featureFlags = toSignal(this.api.getFeatureFlags());
+  }
 
   isFeatureEnabled(name: string) {
     return computed(

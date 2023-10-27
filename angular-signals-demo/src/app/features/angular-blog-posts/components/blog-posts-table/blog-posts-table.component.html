@@ -1,4 +1,17 @@
-<p-table [value]="vm.blogPosts() ?? []" [loading]="areBlogPostsLoading()">
+<p-toolbar styleClass="mb-4 gap-2">
+  <ng-template pTemplate="left">
+    <button
+      pButton
+      pRipple
+      label="Create"
+      icon="pi pi-plus"
+      class="p-button-success mr-2"
+      (click)="isDialogVisible.set(true)"
+    ></button>
+  </ng-template>
+</p-toolbar>
+
+<p-table [value]="blogPosts() ?? []" [loading]="areBlogPostsLoading()">
   <ng-template pTemplate="header">
     <tr>
       <th>Title</th>
@@ -26,9 +39,62 @@
       </td>
     </tr>
   </ng-template>
-  <ng-template pTemplate="summary">
+  <ng-template
+    pTemplate="summary"
+    *ngIf="canUserCreateAndIsBlogPostCountFeatureEnabled()"
+  >
     <div class="flex align-items-center justify-content-between">
       In total there are {{ blogPostCount() }} blog posts.
     </div>
   </ng-template>
 </p-table>
+
+<p-dialog
+  [visible]="isDialogVisible()"
+  [style]="{ width: '450px' }"
+  header="Blog post details"
+  [modal]="true"
+  styleClass="p-fluid"
+>
+  <ng-template pTemplate="content">
+    <div class="field">
+      <label for="name">Title</label>
+      <input
+        type="text"
+        pInputText
+        id="title"
+        value="New Blogpost"
+        required
+        autofocus
+      />
+      <label for="name">Author</label>
+      <input
+        type="text"
+        pInputText
+        id="author"
+        value="John Doe"
+        required
+        autofocus
+      />
+    </div>
+  </ng-template>
+
+  <ng-template pTemplate="footer">
+    <button
+      pButton
+      pRipple
+      label="Cancel"
+      icon="pi pi-times"
+      class="p-button-text"
+      (click)="isDialogVisible.set(false)"
+    ></button>
+    <button
+      pButton
+      pRipple
+      label="Save"
+      icon="pi pi-check"
+      class="p-button-text"
+      (click)="createBlogPost()"
+    ></button>
+  </ng-template>
+</p-dialog>

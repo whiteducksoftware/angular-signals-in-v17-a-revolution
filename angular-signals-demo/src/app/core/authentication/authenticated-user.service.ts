@@ -19,8 +19,4 @@ export class AuthenticatedUserService {
   getAuthenticatedUserAbilities() {
     return computed(() => this.authenticatedUser()?.abilities);
   }
-
-  isUserAuthenticated() {
-    return this.authenticatedUser() !== undefined;
-  }
 }

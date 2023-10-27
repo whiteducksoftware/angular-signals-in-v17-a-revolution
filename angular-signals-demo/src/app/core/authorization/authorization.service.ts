@@ -42,6 +42,6 @@ export class AuthorizationService {
   }
 
   private hasPermissionTo(action: Actions, subject: Subjects) {
-    return this.permissions().can(action, subject);
+    return computed(() => this.permissions().can(action, subject));
   }
 }

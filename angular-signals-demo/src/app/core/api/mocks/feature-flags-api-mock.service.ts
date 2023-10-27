@@ -12,6 +12,6 @@ export class FeatureFlagsApiMockService {
   getFeatureFlags(): Observable<FeatureFlag[]> {
     return this.http
       .get<FeatureFlag[]>('assets/mocks/feature-flags-mock.json')
-      .pipe(delay(1500));
+      .pipe(delay(100));
   }
 }
