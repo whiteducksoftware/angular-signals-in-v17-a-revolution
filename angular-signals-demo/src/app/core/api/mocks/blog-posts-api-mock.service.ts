@@ -12,6 +12,6 @@ export class BlogPostsApiMockService {
   getBlogPosts(): Observable<BlogPost[]> {
     return this.http
       .get<BlogPost[]>('assets/mocks/blog-posts-mock.json')
-      .pipe(delay(3000));
+      .pipe(delay(1500));
   }
 }
