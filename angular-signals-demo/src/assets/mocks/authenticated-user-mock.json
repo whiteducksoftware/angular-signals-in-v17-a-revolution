@@ -6,7 +6,7 @@
       "subject": "startpage"
     },
     {
-      "action": "read",
+      "action": "create",
       "subject": "angular-blog-posts"
     },
     {

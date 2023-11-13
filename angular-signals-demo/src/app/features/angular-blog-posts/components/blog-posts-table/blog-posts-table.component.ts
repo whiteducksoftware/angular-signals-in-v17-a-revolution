@@ -37,26 +37,25 @@ export class BlogPostsTableComponent {
   @Input({ required: true })
   vm!: BlogPostsViewModel;
 
-  // This won't be necessary with the new Signal-based component API
-  blogPosts: WritableSignal<BlogPost[] | undefined> = signal(undefined);
-
   blogPost: BlogPost = {
-    title: 'New Blog Post',
-    author: 'John Doe',
-    url: 'john-does-blopost.example.com',
+    title: 'Freds new blog post',
+    author: 'Fred',
+    url: 'https://whiteduck.de/freds-new-blog-post',
     date: new Date(),
     keywords: ['Signals demo'],
   };
 
-  isDialogVisible = signal(false);
+  isDialogVisible: WritableSignal<boolean> = signal(false);
 
-  submitted = computed(() => !this.isDialogVisible());
+  submitted: Signal<boolean> = computed(() => !this.isDialogVisible());
 
   areBlogPostsLoading: Signal<boolean> = computed(
     () => this.vm.blogPosts() === undefined
   );
 
-  blogPostCount: Signal<number> = computed(() => this.blogPosts()?.length ?? 0);
+  blogPostCount: Signal<number> = computed(
+    () => this.vm.blogPosts()?.length ?? 0
+  );
 
   canUserCreateAndIsBlogPostCountFeatureEnabled = computed(
     () => this.canCreateBlogPosts() && this.isBlogPostCountFeatureEnabled()
@@ -72,18 +71,15 @@ export class BlogPostsTableComponent {
     private readonly authService: AuthorizationService,
     private readonly featureFlagsService: FeatureFlagsService
   ) {
-    // This won't be necessary with the new Signal-based component API
-    this.blogPosts.update(this.vm.blogPosts);
   }
 
   createBlogPost(): void {
-    this.blogPosts.mutate((blogPosts) => {
+    this.vm.blogPosts.update((blogPosts) => {
       if (blogPosts) {
-        blogPosts.push(this.blogPost);
+        blogPosts = [...blogPosts, this.blogPost];
       } else {
         blogPosts = [this.blogPost];
       }
-
       return blogPosts;
     });
 

@@ -6,5 +6,9 @@
   {
     "name": "unfinished-feature",
     "enabled": false
+  },
+  {
+    "name": "blog-post-count",
+    "enabled": true
   }
 ]

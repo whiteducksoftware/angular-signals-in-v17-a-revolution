@@ -11,7 +11,7 @@
   </ng-template>
 </p-toolbar>
 
-<p-table [value]="blogPosts() ?? []" [loading]="areBlogPostsLoading()">
+<p-table [value]="vm.blogPosts() ?? []" [loading]="areBlogPostsLoading()">
   <ng-template pTemplate="header">
     <tr>
       <th>Title</th>
@@ -63,18 +63,18 @@
         type="text"
         pInputText
         id="title"
-        value="New Blogpost"
+        value="Freds New Blogpost"
         required
-        autofocus
+        disabled
       />
       <label for="name">Author</label>
       <input
         type="text"
         pInputText
         id="author"
-        value="John Doe"
+        value="Fred"
         required
-        autofocus
+        disabled
       />
     </div>
   </ng-template>

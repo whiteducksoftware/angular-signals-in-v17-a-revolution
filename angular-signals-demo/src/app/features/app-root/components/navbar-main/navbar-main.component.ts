@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { MenubarModule } from 'primeng/menubar';
 import { AvatarModule } from 'primeng/avatar';
 import { APP_ROUTES } from 'src/app/core/routing/app-routes.constant';
+import { FeatureFlagsService } from 'src/app/core/feature-flags/feature-flags.service';
+import { NavbarService } from '../../services/navbar.service';
 
 @Component({
   selector: 'app-navbar-main',
@@ -12,6 +14,11 @@ import { APP_ROUTES } from 'src/app/core/routing/app-routes.constant';
   styleUrls: ['./navbar-main.component.scss'],
 })
 export class NavbarMainComponent {
+  private readonly isUnfinishedFeatureEnabled =
+    this.service.isUnfinishedFeatureEnabled();
+
+  constructor(private readonly service: NavbarService) {}
+
   readonly items = [
     {
       label: APP_ROUTES.startpage.label,
@@ -27,6 +34,7 @@ export class NavbarMainComponent {
       label: APP_ROUTES.unfinishedFeature.label,
       icon: 'pi pi-fw pi-question',
       routerLink: [APP_ROUTES.unfinishedFeature.link],
+      disabled: !this.isUnfinishedFeatureEnabled(),
     },
     {
       label: APP_ROUTES.adminArea.label,
