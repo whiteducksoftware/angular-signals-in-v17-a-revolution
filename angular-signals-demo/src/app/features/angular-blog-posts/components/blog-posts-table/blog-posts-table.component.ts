@@ -69,7 +69,7 @@ export class BlogPostsTableComponent {
 
   constructor(
     private readonly authService: AuthorizationService,
-    private readonly featureFlagsService: FeatureFlagsService
+    public readonly featureFlagsService: FeatureFlagsService
   ) {
   }
 

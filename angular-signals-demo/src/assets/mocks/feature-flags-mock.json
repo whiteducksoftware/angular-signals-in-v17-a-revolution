@@ -10,5 +10,13 @@
   {
     "name": "blog-post-count",
     "enabled": true
+  },
+  {
+    "name": "create-blog-posts",
+    "enabled": true
+  },
+  {
+    "name": "enter-blog-post-data",
+    "enabled": false
   }
 ]

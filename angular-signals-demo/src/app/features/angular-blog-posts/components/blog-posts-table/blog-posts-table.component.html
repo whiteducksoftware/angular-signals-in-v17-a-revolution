@@ -1,4 +1,12 @@
-<p-toolbar styleClass="mb-4 gap-2">
+<p-toolbar
+  styleClass="mb-4 gap-2"
+  *ngIf="
+    featureFlagsService.isAtLeastOneOfTheFeaturesEnabled([
+      'create-blog-posts',
+      'enter-blog-post-data'
+    ])()
+  "
+>
   <ng-template pTemplate="left">
     <button
       pButton

@@ -33,9 +33,20 @@ export class FeatureFlagsService {
     );
   }
 
-  isAtLeastOneOfTheFeaturesEnabled(name: string[]): Signal<boolean> {
+  // isAtLeastOneOfTheFeaturesEnabledObservableImplementation(names: string[]): Observable<boolean> {
+  //   return this.featureFlags$.pipe(
+  //     map((featureFlags) =>
+  //       featureFlags.filter((feature) => names.includes(feature.name))
+  //     ),
+  //     map((featureFlags) =>
+  //       featureFlags.every((feature) => feature?.isEnabled ?? false)
+  //     )
+  //   );
+  // }
+
+  isAtLeastOneOfTheFeaturesEnabled(names: string[]): Signal<boolean> {
     return computed(() =>
-      name.some(
+      names.some(
         (name) =>
           this.featureFlags()?.find((feature) => feature.name === name)
             ?.enabled ?? false
