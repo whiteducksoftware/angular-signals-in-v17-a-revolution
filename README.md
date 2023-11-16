@@ -1,8 +1,10 @@
-# Demo for the "Angular Signals in v16 - A revolution?" blog post
+# Demo for the "Angular Signals in v17 - A revolution?" blog post
 
-The code in this repository is a demo for the blog post [Angular Signals in v16 - A revolution?](https://whiteduck.de/angular-signals-in-v16-a-revolution/).
+The code in this repository is a demo for the blog post [Angular Signals in v17 - A revolution?](https://whiteduck.de/angular-signals-in-v17-a-revolution/).
 
-It is located in the `./angular-signals-demo` subfolder.
+It is located in the `./angular-signals-demo` subfolder and can be run standalone as it includes mocked api calls. 
+
+Have fun exploring Signals on your own 🚀
 
 ## How to run the demo
 
