@@ -1,3 +1,3 @@
-# Demo to showcase Angular Signals in v16
+# Demo to showcase Angular Signals in v17
 
-This is a demo repository for the blog post [Angular Signals in v16 - A revolution?](https://whiteduck.de/angular-signals-in-v16-a-revolution/).
+This is a demo repository for the blog post [Angular Signals in v17 - A revolution?](https://whiteduck.de/angular-signals-in-v17-a-revolution/).
